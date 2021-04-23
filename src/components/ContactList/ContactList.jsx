@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PropTypes from 'prop-types'
 
 import styles from './ContactList.module.css'
@@ -29,6 +30,6 @@ ContactList.propTypes = {
         number: PropTypes.string.isRequired,
       }).isRequired,
     ),
-    onDeleteContact: PropTypes.func.isRequired,
+    onDeleteContacts: PropTypes.func.isRequired,
   };
   
