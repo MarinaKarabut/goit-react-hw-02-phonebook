@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 import ContactForm from '../ContactForm/ContactForm';
-
 import Filter from '../Filter/Filter';
-
 import ContactList from '../ContactList/ContactList';
 
 import { v4 as uuidv4 } from 'uuid';
@@ -65,9 +63,7 @@ class Phonebook extends Component {
       return contacts
     }
 
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter),
-    );
+    return contacts.filter(({name}) => name.toLowerCase().includes(normalizedFilter));
   };
 
   render() {
@@ -89,7 +85,7 @@ class Phonebook extends Component {
         {contacts.length > 1 && (
           <Filter value={filter} onChange={handelChange} />
         )}
-        {contacts.length > 0 ? (
+        {(contacts.length >0) ? (
           <ContactList
             contacts={visibleContacts}
             onDeleteContacts={onDeleteContacts}

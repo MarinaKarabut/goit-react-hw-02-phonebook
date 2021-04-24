@@ -6,17 +6,16 @@ import styles from './ContactList.module.css'
 
 function ContactList({contacts, onDeleteContacts}) {
     const contactElements = contacts.map(({id, name, number}, idx) => (
-    <li key ={id} >
-      <span className ={styles.list}>{name}</span> : <span>{number}</span>
-      <button className={styles.btn} onClick={()=> onDeleteContacts(idx)}>Delete</button>
-    </li>
+      <li key ={id} >
+        <span className ={styles.list}>{name}</span> : <span>{number}</span>
+        <button className={styles.btn} onClick={()=> onDeleteContacts(idx)}>Delete</button>
+      </li>
     ))
         
     return (
         <ul>
             {contactElements}
         </ul>
-        
     )
 };
 

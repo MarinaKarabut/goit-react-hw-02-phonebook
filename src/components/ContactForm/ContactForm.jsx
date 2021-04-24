@@ -6,11 +6,10 @@ import {fields} from "./fields";
 
 import styles from './ContactForm.module.css'
 
+import {initialState} from "./initialState"
+
 class ContactForm extends  Component {
-    state ={
-        name: '',
-        number: ''
-    }
+    state ={...initialState}
 
     handelChange = ({target}) => {
         const {name, value} = target
@@ -24,10 +23,8 @@ class ContactForm extends  Component {
     }
 
     reset = () => {
-        this.setState({name: '', number: ''})
+        this.setState({...initialState})
     }
-        
-
 
     render(){
         const {name, number} = this.state;
